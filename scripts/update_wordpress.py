@@ -32,7 +32,7 @@ def update_json_with_wordpress_version(new_version):
             return False
         data["software"]["wordpress"]["latest"] = new_version
         with open(JSON_PATH, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4)
+            json.dump(data, f, indent="\t")
         print(f"Updated WordPress version to {new_version}")
         return True
     except Exception as e:

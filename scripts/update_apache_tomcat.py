@@ -72,7 +72,7 @@ def update_json_with_tomcat_versions(latest, series_versions):
         data["software"]["apache_tomcat"] = tomcat_data
         if updated:
             with open(JSON_PATH, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4)
+                json.dump(data, f, indent="\t")
             print(f"Updated Tomcat versions: latest={latest}, series={series_versions}")
         else:
             print("Tomcat versions are already up to date.")

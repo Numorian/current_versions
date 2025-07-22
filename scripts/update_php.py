@@ -57,7 +57,7 @@ def update_json_with_php_versions(latest, series_versions):
         data["software"]["php"] = php_data
         if updated:
             with open(JSON_PATH, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4)
+                json.dump(data, f, indent="\t")
             print(f"Updated PHP versions: latest={latest}, series={series_versions}")
         else:
             print("PHP versions are already up to date.")
