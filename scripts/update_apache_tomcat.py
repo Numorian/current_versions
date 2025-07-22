@@ -14,9 +14,6 @@ TOMCAT_RELEASE_RE = re.compile(
     re.DOTALL,
 )
 
-# Map series to their upgrade path (10.0 -> 10.1)
-SERIES_UPGRADE = {"10.0": "10.1"}
-
 
 def get_tomcat_versions():
     try:
