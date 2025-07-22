@@ -1,0 +1,19 @@
+name: Validate JSON
+
+on:
+  push:
+    paths:
+      - 'current_versions.json'
+  pull_request:
+    paths:
+      - 'current_versions.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Validate current_versions.json
+        run: |
+          python -m json.tool current_versions.json
